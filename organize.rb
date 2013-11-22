@@ -1,13 +1,13 @@
 include Enumerable
 require "./lib"
 
-input_file = "extras_short.css"
+input_file = "extras.css"
 output_file = "output.css"
 
 lines_array = IO.readlines input_file
 
 organizer = Organizer.new
-new_block = organizer.get_block(5, lines_array)
+new_block = organizer.get_all_blocks(lines_array, ".header")
 
 string_output = new_block.join("")
 
